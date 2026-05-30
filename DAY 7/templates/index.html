@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respiratory Disease Smart Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🫁 Respiratory Disease Smart Assistant</h1>
+
+    <p class="subtitle">
+        AI-Based Prediction of Respiratory Diseases
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <label>Age</label>
+        <input type="number"
+               name="age"
+               placeholder="Enter Age"
+               required>
+
+        <label>Gender</label>
+        <select name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label>Symptom 1</label>
+        <select name="symptom1" required>
+            <option value="">Select Symptom</option>
+
+            <option>Wheezing</option>
+            <option>Shortness of Breath</option>
+            <option>Chest Tightness</option>
+            <option>Night Cough</option>
+            <option>Rapid Breathing</option>
+
+            <option>High Fever</option>
+            <option>Persistent Cough</option>
+            <option>Chest Pain</option>
+            <option>Fatigue</option>
+            <option>Difficulty Breathing</option>
+
+            <option>Runny Nose</option>
+            <option>Sore Throat</option>
+            <option>Sneezing</option>
+            <option>Nasal Congestion</option>
+            <option>Mild Fever</option>
+
+            <option>Normal Breathing</option>
+            <option>Healthy</option>
+            <option>No Fever</option>
+            <option>No Cough</option>
+            <option>Clear Lungs</option>
+        </select>
+
+        <label>Symptom 2</label>
+        <select name="symptom2" required>
+            <option value="">Select Symptom</option>
+
+            <option>Wheezing</option>
+            <option>Shortness of Breath</option>
+            <option>Chest Tightness</option>
+            <option>Night Cough</option>
+            <option>Rapid Breathing</option>
+
+            <option>High Fever</option>
+            <option>Persistent Cough</option>
+            <option>Chest Pain</option>
+            <option>Fatigue</option>
+            <option>Difficulty Breathing</option>
+
+            <option>Runny Nose</option>
+            <option>Sore Throat</option>
+            <option>Sneezing</option>
+            <option>Nasal Congestion</option>
+            <option>Mild Fever</option>
+
+            <option>Normal Breathing</option>
+            <option>Healthy</option>
+            <option>No Fever</option>
+            <option>No Cough</option>
+            <option>Clear Lungs</option>
+        </select>
+
+        <label>Symptom 3</label>
+        <select name="symptom3" required>
+            <option value="">Select Symptom</option>
+
+            <option>Wheezing</option>
+            <option>Shortness of Breath</option>
+            <option>Chest Tightness</option>
+            <option>Night Cough</option>
+            <option>Rapid Breathing</option>
+
+            <option>High Fever</option>
+            <option>Persistent Cough</option>
+            <option>Chest Pain</option>
+            <option>Fatigue</option>
+            <option>Difficulty Breathing</option>
+
+            <option>Runny Nose</option>
+            <option>Sore Throat</option>
+            <option>Sneezing</option>
+            <option>Nasal Congestion</option>
+            <option>Mild Fever</option>
+
+            <option>Normal Breathing</option>
+            <option>Healthy</option>
+            <option>No Fever</option>
+            <option>No Cough</option>
+            <option>Clear Lungs</option>
+        </select>
+
+        <button type="submit">
+            Predict Disease
+        </button>
+
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">
+        {{ prediction_text }}
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        Respiratory Disease Smart Assistant © 2026
+    </div>
+
+</div>
+
+</body>
+</html>
